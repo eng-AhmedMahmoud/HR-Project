@@ -1,7 +1,11 @@
 import { defineAppSetup } from '@slidev/types'
 import CustomIcon from '../components/CustomIcon.vue'
+import AIAnimation from '../components/AIAnimation.vue'
 
 export default defineAppSetup(({ app }) => {
+  // Register AIAnimation component globally
+  app.component('AIAnimation', AIAnimation)
+
   // Register CustomIcon globally to intercept missing carbon icons
   app.component('CarbonGoal', CustomIcon)
   app.component('CarbonSkillTest', CustomIcon)

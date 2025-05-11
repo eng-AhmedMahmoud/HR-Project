@@ -1,177 +1,274 @@
 <template>
-  <div class="org-chart">
-    <div 
-      v-motion
-      :initial="{ opacity: 0, y: 50 }"
-      :enter="{ opacity: 1, y: 0, transition: { delay: 200, duration: 800 } }"
-      class="level-1"
-    >
-      <div class="node bg-blue-500">
-        <span class="text-2xl">👥</span>
-        <div class="font-bold">Executive Team</div>
-        <div class="text-xs">(CEO, CTO, COO, CFO)</div>
+  <div class="org-chart-container">
+    <!-- Executive Team (Level 1) -->
+    <div class="org-level level-1">
+      <div 
+        v-motion
+        :initial="{ opacity: 0, y: -50 }"
+        :enter="{ opacity: 1, y: 0, transition: { duration: 800 } }"
+        class="org-box primary"
+      >
+        <div class="org-icon">👑</div>
+        <div class="org-title">Executive Team</div>
+        <div class="org-members">
+          <span class="member-badge">CEO</span>
+          <span class="member-badge">CTO</span>
+          <span class="member-badge">COO</span>
+        </div>
       </div>
     </div>
-    
-    <div class="connector-wrapper">
-      <div class="connector"></div>
-    </div>
-    
-    <div class="level-2-wrapper">
+
+    <!-- Vertical Line -->
+    <div class="tree-connector-vertical"></div>
+
+    <!-- Horizontal Line for Level 2 -->
+    <div class="tree-connector-horizontal"></div>
+
+    <!-- Department Heads (Level 2) -->
+    <div class="org-level level-2">
       <div 
         v-motion
         :initial="{ opacity: 0, x: -100 }"
-        :enter="{ opacity: 1, x: 0, transition: { delay: 500, duration: 800 } }"
-        class="level-2"
+        :enter="{ opacity: 1, x: 0, transition: { delay: 300, duration: 800 } }"
+        class="org-box secondary"
       >
-        <div class="node bg-purple-500">
-          <span class="text-2xl">💻</span>
-          <div class="font-bold">Product</div>
-          <div class="text-xs">Development</div>
-        </div>
+        <div class="org-icon">💻</div>
+        <div class="org-title">Product</div>
+        <div class="org-subtitle">6 members</div>
       </div>
-      
+
       <div 
         v-motion
-        :initial="{ opacity: 0, y: 100 }"
-        :enter="{ opacity: 1, y: 0, transition: { delay: 600, duration: 800 } }"
-        class="level-2"
+        :initial="{ opacity: 0, y: 50 }"
+        :enter="{ opacity: 1, y: 0, transition: { delay: 400, duration: 800 } }"
+        class="org-box secondary"
       >
-        <div class="node bg-green-500">
-          <span class="text-2xl">📊</span>
-          <div class="font-bold">Data</div>
-          <div class="text-xs">Science</div>
-        </div>
+        <div class="org-icon">📊</div>
+        <div class="org-title">Data Science</div>
+        <div class="org-subtitle">3 members</div>
       </div>
-      
+
       <div 
         v-motion
-        :initial="{ opacity: 0, y: 100 }"
-        :enter="{ opacity: 1, y: 0, transition: { delay: 700, duration: 800 } }"
-        class="level-2"
+        :initial="{ opacity: 0, y: 50 }"
+        :enter="{ opacity: 1, y: 0, transition: { delay: 500, duration: 800 } }"
+        class="org-box secondary"
       >
-        <div class="node bg-orange-500">
-          <span class="text-2xl">🛠️</span>
-          <div class="font-bold">Customer</div>
-          <div class="text-xs">Success</div>
-        </div>
+        <div class="org-icon">🛠️</div>
+        <div class="org-title">Customer</div>
+        <div class="org-subtitle">4 members</div>
       </div>
-      
+
       <div 
         v-motion
         :initial="{ opacity: 0, x: 100 }"
-        :enter="{ opacity: 1, x: 0, transition: { delay: 800, duration: 800 } }"
-        class="level-2"
+        :enter="{ opacity: 1, x: 0, transition: { delay: 600, duration: 800 } }"
+        class="org-box secondary"
       >
-        <div class="node bg-red-500">
-          <span class="text-2xl">📈</span>
-          <div class="font-bold">Sales &</div>
-          <div class="text-xs">Marketing</div>
-        </div>
+        <div class="org-icon">📈</div>
+        <div class="org-title">Sales</div>
+        <div class="org-subtitle">5 members</div>
       </div>
     </div>
-    
-    <div class="connector-wrapper level-2-3">
-      <div class="connector"></div>
-      <div class="connector"></div>
-      <div class="connector"></div>
-      <div class="connector"></div>
+
+    <!-- Vertical Lines to Level 3 -->
+    <div class="tree-connectors-to-level3">
+      <div class="tree-connector-vertical level3-connector"></div>
     </div>
-    
-    <div class="level-3-wrapper">
+
+    <!-- Horizontal Line for Level 3 -->
+    <div class="tree-connector-horizontal level3"></div>
+
+    <!-- Support Functions (Level 3) -->
+    <div class="org-level level-3">
+      <div 
+        v-motion
+        :initial="{ opacity: 0, y: 50 }"
+        :enter="{ opacity: 1, y: 0, transition: { delay: 700, duration: 800 } }"
+        class="org-box tertiary"
+      >
+        <div class="org-icon">💰</div>
+        <div class="org-title">Finance</div>
+        <div class="org-subtitle">1 specialist</div>
+      </div>
+
+      <div 
+        v-motion
+        :initial="{ opacity: 0, y: 50 }"
+        :enter="{ opacity: 1, y: 0, transition: { delay: 800, duration: 800 } }"
+        class="org-box tertiary"
+      >
+        <div class="org-icon">👤</div>
+        <div class="org-title">HR</div>
+        <div class="org-subtitle">1 manager</div>
+      </div>
+
       <div 
         v-motion
         :initial="{ opacity: 0, y: 50 }"
         :enter="{ opacity: 1, y: 0, transition: { delay: 900, duration: 800 } }"
-        class="level-3"
+        class="org-box tertiary"
       >
-        <div class="node bg-blue-400">
-          <span class="text-xl">💰</span>
-          <div class="font-bold text-sm">Finance</div>
-        </div>
-      </div>
-      
-      <div 
-        v-motion
-        :initial="{ opacity: 0, y: 50 }"
-        :enter="{ opacity: 1, y: 0, transition: { delay: 1000, duration: 800 } }"
-        class="level-3"
-      >
-        <div class="node bg-purple-400">
-          <span class="text-xl">👤</span>
-          <div class="font-bold text-sm">HR</div>
-        </div>
-      </div>
-      
-      <div 
-        v-motion
-        :initial="{ opacity: 0, y: 50 }"
-        :enter="{ opacity: 1, y: 0, transition: { delay: 1100, duration: 800 } }"
-        class="level-3"
-      >
-        <div class="node bg-green-400">
-          <span class="text-xl">🔧</span>
-          <div class="font-bold text-sm">Admin</div>
-        </div>
+        <div class="org-icon">🔧</div>
+        <div class="org-title">Admin</div>
+        <div class="org-subtitle">1 admin</div>
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
-.org-chart {
-  width: 100%;
+.org-chart-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.level-1, .level-2, .level-3 {
-  text-align: center;
-  margin: 0 10px;
-}
-
-.node {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  padding: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.connector-wrapper {
-  display: flex;
-  justify-content: center;
   width: 100%;
-  height: 40px;
+  padding: 10px 0;
   position: relative;
 }
 
-.level-2-3 {
-  justify-content: space-evenly;
-  width: 60%;
-}
-
-.connector {
-  width: 2px;
-  height: 100%;
-  background-color: #ccc;
-}
-
-.level-2-wrapper {
+.org-level {
   display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 6px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.level-1 {
+  margin-bottom: 20px;
+}
+
+.level-2 {
   justify-content: space-between;
   width: 100%;
+  margin-bottom: 20px;
 }
 
-.level-3-wrapper {
-  display: flex;
+.level-3 {
   justify-content: space-evenly;
+  width: 70%;
+}
+
+.org-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  min-width: 90px;
+}
+
+.org-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.primary {
+  background: linear-gradient(45deg, #3b82f6, #1e40af);
+  border: 2px solid #60a5fa;
+  width: 140px;
+}
+
+.secondary {
+  width: 110px;
+  margin: 0 4px;
+}
+
+.secondary:nth-child(1) {
+  background: linear-gradient(45deg, #8b5cf6, #5b21b6);
+  border: 2px solid #a78bfa;
+}
+
+.secondary:nth-child(2) {
+  background: linear-gradient(45deg, #10b981, #047857);
+  border: 2px solid #6ee7b7;
+}
+
+.secondary:nth-child(3) {
+  background: linear-gradient(45deg, #f59e0b, #b45309);
+  border: 2px solid #fcd34d;
+}
+
+.secondary:nth-child(4) {
+  background: linear-gradient(45deg, #ef4444, #b91c1c);
+  border: 2px solid #fca5a5;
+}
+
+.tertiary {
+  background: linear-gradient(45deg, #3b82f6, #0284c7);
+  border: 2px solid #93c5fd;
+  width: 100px;
+}
+
+.org-icon {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.org-title {
+  font-weight: bold;
+  font-size: 12px;
+  margin-bottom: 2px;
+}
+
+.org-subtitle {
+  font-size: 10px;
+  opacity: 0.8;
+}
+
+.org-members {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3px;
+  margin-top: 4px;
+}
+
+.member-badge {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 1px 4px;
+  font-size: 9px;
+}
+
+/* Tree connectors */
+.tree-connector-vertical {
+  width: 2px;
+  height: 20px;
+  background-color: #94a3b8;
+  position: relative;
+  z-index: 1;
+}
+
+.tree-connector-horizontal {
+  width: 90%;
+  height: 2px;
+  background-color: #94a3b8;
+  position: relative;
+  margin: 0 auto 10px;
+  z-index: 1;
+}
+
+.tree-connectors-to-level3 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.level3-connector {
+  height: 20px;
+}
+
+.tree-connector-horizontal.level3 {
   width: 60%;
 }
 </style>

@@ -186,12 +186,11 @@ layout: two-cols
 
 <div class="mt-4">
   <div v-click class="mb-4">
-    <div class="text-lg font-semibold text-blue-500">Executive Team (4)</div>
+    <div class="text-lg font-semibold text-blue-500">Executive Team (3)</div>
     <ul class="ml-6 text-sm">
       <li>CEO (1)</li>
       <li>CTO (1)</li>
       <li>COO (1)</li>
-      <li>CFO (1)</li>
     </ul>
   </div>
   
@@ -247,7 +246,7 @@ layout: two-cols
 </div>
 
 <!--
-We've identified 25 key positions across 6 departments to launch and scale our startup effectively. This structure gives us the right mix of technical talent, business development, and operational support.
+We've identified 24 key positions across 6 departments to launch and scale our startup effectively. This structure gives us the right mix of technical talent, business development, and operational support.
 -->
 
 ---
@@ -305,31 +304,82 @@ layout: default
 
 # Sample Job Description: AI Engineer
 
-<div class="grid grid-cols-2 gap-8 mt-4">
-  <div>
-    <div v-click class="mb-6">
-      <div class="text-lg font-semibold text-blue-500">Position Overview</div>
-      <p class="text-sm mt-1">
-        We're seeking an innovative AI Engineer to develop and deploy machine learning models that power our intelligent HR platform. This role combines technical expertise with a passion for solving real-world HR challenges.
+<div class="absolute top-0 right-0 w-1/3 h-full opacity-20 pointer-events-none">
+  <AIAnimation :width="400" :height="600" :nodeCount="40" :connectionDensity="3" />
+</div>
+
+<div class="flex flex-col md:flex-row gap-3 mt-4 z-10 relative">
+  <div class="flex-1 flex flex-col gap-2">
+    <div v-click="1" class="bg-gray-800 bg-opacity-80 p-2 rounded-lg shadow-md border border-blue-700 h-[165px] transition-all duration-500 transform hover:scale-[1.02]">
+      <div class="text-base font-bold text-blue-400 flex items-center">
+        <div class="mr-1.5 text-lg">🧠</div>
+        Position Overview
+      </div>
+      <p class="text-blue-100 mt-1 leading-tight text-xs">
+        We're seeking an innovative AI Engineer to develop our next-generation HR talent matching platform. This key role will create algorithms that transform recruitment, performance analysis, and talent development across the organization.
       </p>
+    </div>
+    
+  <div v-click="2" class="bg-gray-800 bg-opacity-80 p-2 rounded-lg shadow-md border border-indigo-700 h-[165px] transition-all duration-500 transform hover:scale-[1.02]">
+      <div class="text-base font-bold text-indigo-400 flex items-center">
+        <div class="mr-1.5 text-lg">💼</div>
+        Key Projects
+      </div>
+      <ul class="text-indigo-100 mt-1 list-disc ml-4 space-y-0 text-xs">
+        <li>Resume parsing system with 98% accuracy</li>
+        <li>Custom candidate scoring algorithm based on team fit</li>
+        <li>Performance prediction analytics engine</li>
+        <li>Skill gap identification and training recommendation tool</li>
+      </ul>
     </div>
   </div>
   
-  <div>
-    <div v-click>
-      <div class="text-lg font-semibold text-purple-500">Preferred Qualifications</div>
-      <ul class="text-sm mt-1 list-disc ml-4">
-        <li>Experience with HR tech or recruitment platforms</li>
-        <li>Knowledge of ethical AI practices and bias mitigation</li>
-        <li>Background in recommendation systems</li>
-        <li>Familiarity with cloud platforms (AWS, GCP, Azure)</li>
+  <div class="flex-1 flex flex-col gap-2">
+    <div v-click="3" class="bg-gray-800 bg-opacity-80 p-2 rounded-lg shadow-md border border-purple-700 h-[165px] transition-all duration-500 transform hover:scale-[1.02]">
+      <div class="text-base font-bold text-purple-400 flex items-center">
+        <div class="mr-1.5 text-lg">🔧</div>
+        Preferred Qualifications
+      </div>
+      <ul class="text-purple-100 mt-1 list-disc ml-4 space-y-0 text-xs">
+        <li>3+ years experience with ML in HR tech</li>
+        <li>Portfolio of bias-mitigation strategies</li>
+        <li>Experience with NLP and recommendation systems</li>
+        <li>Strong background in data ethics and privacy</li>
+        <li>Skilled in explaining complex models to non-technical stakeholders</li>
+      </ul>
+    </div>
+    
+  <div v-click="4" class="bg-gray-800 bg-opacity-80 p-2 rounded-lg shadow-md border border-pink-700 h-[165px] transition-all duration-500 transform hover:scale-[1.02]">
+      <div class="text-base font-bold text-pink-400 flex items-center">
+        <div class="mr-1.5 text-lg">💬</div>
+        Expected Impact
+      </div>
+      <ul class="text-pink-100 mt-1 list-disc ml-4 space-y-0 text-xs">
+        <li>Reduce hiring time by 40% through AI-powered screening</li>
+        <li>Improve candidate quality scores by 35%</li>
+        <li>Decrease bias in selection through blind matching algorithms</li>
+        <li>Develop self-improving models that adapt to changing needs</li>
       </ul>
     </div>
   </div>
 </div>
 
+<div class="absolute bottom-8 right-8 w-16 h-16 transition-all duration-500 transform hover:scale-110">
+  <div class="relative w-full h-full">
+    <div class="absolute inset-0 flex items-center justify-center">
+      <div class="w-8 h-8 rounded-full bg-blue-500 opacity-20 animate-ping"></div>
+    </div>
+    <div class="absolute inset-0 flex items-center justify-center">
+      <div class="w-6 h-6 rounded-full bg-blue-500 opacity-30 animate-pulse"></div>
+    </div>
+    <div class="absolute inset-0 flex items-center justify-center text-base">
+      🤖
+    </div>
+  </div>
+</div>
+
 <!--
-This job description exemplifies our approach to attracting top talent by clearly defining responsibilities, required skills, and the value proposition for candidates.
+This job description exemplifies our approach to attracting top AI talent by clearly defining responsibilities, required skills, and the value proposition for candidates while also highlighting the cutting-edge technologies they'll work with.
 -->
 
 ---
@@ -363,12 +413,14 @@ Our recruitment process leverages both traditional channels and innovative techn
 -->
 
 ---
-transition: slide-up
+transition: zoom-in-out
+layout: default
+class: text-center
 ---
 
-# Selection Methods by Job Family {class="text-black"}
+<h1 class="text-blue-500 mb-2 text-3xl">Selection Methods by Job Family</h1>
 
-<div class="mt-8">
+<div class="mt-6">
   <RecSelectionMethods />
 </div>
 
@@ -382,82 +434,78 @@ layout: default
 class: text-center
 ---
 
-# Performance Management System {class="text-blue-500"}
+<h1 class="text-blue-500 mb-2 text-3xl">Performance Management System</h1>
 
 <div 
   v-motion
   :initial="{ opacity: 0 }"
   :enter="{ opacity: 1, transition: { delay: 200, duration: 800 } }"
-  class="text-lg text-white mb-8 mt-2"
+  class="text-sm text-white mb-3"
 >
   Continuous | Data-Driven | Growth-Focused
 </div>
-
-<div class="grid grid-cols-2 gap-12 mt-12">
-  <div>
-    <div v-click class="mb-8 transform transition-all duration-500 hover:scale-105">
-      <div class="flex items-center">
-        <div class="text-blue-500 text-2xl mr-3 bg-blue-500 bg-opacity-20 p-2 rounded-full">🎯</div>
-        <div class="font-semibold text-xl text-white">OKR Framework</div>
+  
+<div class="grid grid-cols-2 gap-x-6 gap-y-4 mt-3">
+  <div v-click>
+    <div class="bg-blue-500 bg-opacity-10 p-3 rounded-lg border border-blue-500 transform transition-all duration-500 hover:scale-105 h-full">
+      <div class="flex items-center mb-1">
+        <div class="text-blue-500 text-lg mr-2 bg-blue-500 bg-opacity-30 p-1 rounded-full">🎯</div>
+        <div class="font-medium text-base text-white">OKR Framework</div>
       </div>
-      <p class="text-sm ml-12 mt-2 text-gray-300">
-        Objectives and Key Results at company, team, and individual levels to ensure alignment and focus on measurable outcomes
+      <p class="text-xs text-gray-300 mb-1.5">
+        Company, team and individual objectives with measurable outcomes
       </p>
-      <div class="ml-12 mt-3">
-        <div class="inline-block bg-blue-500 bg-opacity-20 text-blue-300 text-xs px-2 py-1 rounded">Transparent</div>
-        <div class="inline-block bg-blue-500 bg-opacity-20 text-blue-300 text-xs px-2 py-1 rounded ml-2">Measurable</div>
-        <div class="inline-block bg-blue-500 bg-opacity-20 text-blue-300 text-xs px-2 py-1 rounded ml-2">Strategic</div>
+      <div>
+        <div class="inline-block bg-blue-500 bg-opacity-20 text-blue-300 text-xs px-1 py-0.5 rounded">Transparent</div>
+        <div class="inline-block bg-blue-500 bg-opacity-20 text-blue-300 text-xs px-1 py-0.5 rounded ml-1">Measurable</div>
       </div>
     </div>
   </div>
   
-  <div>
-    <div v-click class="mb-8 transform transition-all duration-500 hover:scale-105">
-      <div class="flex items-center">
-        <div class="text-orange-500 text-2xl mr-3 bg-orange-500 bg-opacity-20 p-2 rounded-full">👥</div>
-        <div class="font-semibold text-xl text-white">360° Feedback</div>
+  <div v-click>
+    <div class="bg-orange-500 bg-opacity-10 p-3 rounded-lg border border-orange-500 transform transition-all duration-500 hover:scale-105 h-full">
+      <div class="flex items-center mb-1">
+        <div class="text-orange-500 text-lg mr-2 bg-orange-500 bg-opacity-30 p-1 rounded-full">👥</div>
+        <div class="font-medium text-base text-white">360° Feedback</div>
       </div>
-      <p class="text-sm ml-12 mt-2 text-gray-300">
-        Comprehensive feedback from managers, peers, direct reports, and other stakeholders collected bi-annually
+      <p class="text-xs text-gray-300 mb-1.5">
+        Feedback from managers, peers, reports and stakeholders bi-annually
       </p>
-      <div class="ml-12 mt-3">
-        <div class="inline-block bg-orange-500 bg-opacity-20 text-orange-300 text-xs px-2 py-1 rounded">Holistic</div>
-        <div class="inline-block bg-orange-500 bg-opacity-20 text-orange-300 text-xs px-2 py-1 rounded ml-2">Balanced</div>
-        <div class="inline-block bg-orange-500 bg-opacity-20 text-orange-300 text-xs px-2 py-1 rounded ml-2">Insightful</div>
+      <div>
+        <div class="inline-block bg-orange-500 bg-opacity-20 text-orange-300 text-xs px-1 py-0.5 rounded">Holistic</div>
+        <div class="inline-block bg-orange-500 bg-opacity-20 text-orange-300 text-xs px-1 py-0.5 rounded ml-1">Balanced</div>
       </div>
     </div>
   </div>
   
-  <div>
-    <div v-click class="mb-8 transform transition-all duration-500 hover:scale-105">
-      <div class="flex items-center">
-        <div class="text-green-500 text-2xl mr-3 bg-green-500 bg-opacity-20 p-2 rounded-full">📈</div>
-        <div class="font-semibold text-xl text-white">Continuous Check-ins</div>
+  <div v-click>
+    <div class="bg-green-500 bg-opacity-10 p-3 rounded-lg border border-green-500 transform transition-all duration-500 hover:scale-105 h-full">
+      <div class="flex items-center mb-1">
+        <div class="text-green-500 text-lg mr-2 bg-green-500 bg-opacity-30 p-1 rounded-full">📈</div>
+        <div class="font-medium text-base text-white">Continuous Check-ins</div>
       </div>
-      <p class="text-sm ml-12 mt-2 text-gray-300">
-        Regular 1:1 meetings between managers and team members to provide timely feedback and address challenges
+      <p class="text-xs text-gray-300 mb-1.5">
+        Regular 1:1 meetings for timely feedback and support
       </p>
-      <div class="ml-12 mt-3">
-        <div class="inline-block bg-green-500 bg-opacity-20 text-green-300 text-xs px-2 py-1 rounded">Agile</div>
-        <div class="inline-block bg-green-500 bg-opacity-20 text-green-300 text-xs px-2 py-1 rounded ml-2">Supportive</div>
-        <div class="inline-block bg-green-500 bg-opacity-20 text-green-300 text-xs px-2 py-1 rounded ml-2">Proactive</div>
+      <div>
+        <div class="inline-block bg-green-500 bg-opacity-20 text-green-300 text-xs px-1 py-0.5 rounded">Agile</div>
+        <div class="inline-block bg-green-500 bg-opacity-20 text-green-300 text-xs px-1 py-0.5 rounded ml-1">Supportive</div>
       </div>
     </div>
   </div>
   
-  <div>
-    <div v-click class="mb-8 transform transition-all duration-500 hover:scale-105">
-      <div class="flex items-center">
-        <div class="text-purple-500 text-2xl mr-3 bg-purple-500 bg-opacity-20 p-2 rounded-full">🤖</div>
-        <div class="font-semibold text-xl text-white">AI-Powered Analytics</div>
+  <div v-click>
+    <div class="bg-purple-500 bg-opacity-10 p-3 rounded-lg border border-purple-500 transform transition-all duration-500 hover:scale-105 h-full">
+      <div class="flex items-center mb-1">
+        <div class="text-purple-500 text-lg mr-2 bg-purple-500 bg-opacity-30 p-1 rounded-full">🤖</div>
+        <div class="font-medium text-base text-white">AI-Powered Analytics</div>
       </div>
-      <p class="text-sm ml-12 mt-2 text-gray-300">
-        Machine learning tools that identify performance patterns and provide personalized development recommendations
+      <p class="text-xs text-gray-300 mb-1.5">
+        ML tools for performance patterns and development insights
       </p>
-      <div class="ml-12 mt-3">
-        <div class="inline-block bg-purple-500 bg-opacity-20 text-purple-300 text-xs px-2 py-1 rounded">Data-driven</div>
-        <div class="inline-block bg-purple-500 bg-opacity-20 text-purple-300 text-xs px-2 py-1 rounded ml-2">Predictive</div>
-        <div class="inline-block bg-purple-500 bg-opacity-20 text-purple-300 text-xs px-2 py-1 rounded ml-2">Personalized</div>
+      <div>
+        <div class="inline-block bg-purple-500 bg-opacity-20 text-purple-300 text-xs px-1 py-0.5 rounded">Data-driven</div>
+        <div class="inline-block bg-purple-500 bg-opacity-20 text-purple-300 text-xs px-1 py-0.5 rounded ml-1">Predictive</div>
       </div>
     </div>
   </div>
@@ -468,94 +516,102 @@ Our performance management system is designed to be continuous, transparent, and
 -->
 
 ---
+transition: zoom-in-out
 layout: default
+class: text-center
 ---
 
-# Training & Development Strategy
+<h1 class="text-blue-500 mb-2 text-3xl">Training & Development Strategy</h1>
 
-<div class="grid grid-cols-2 gap-8 mt-8">
-  <div>
-    <div v-click class="mb-6">
-      <div class="text-lg font-semibold text-blue-500">Onboarding Program</div>
-      <ul class="text-sm list-disc ml-4 mt-1">
-        <li>Structured 30-60-90 day onboarding roadmap</li>
-        <li>Company culture and mission immersion</li>
-        <li>Cross-functional shadowing experiences</li>
-        <li>Weekly check-ins with managers and mentors</li>
+<div 
+  v-motion
+  :initial="{ opacity: 0 }"
+  :enter="{ opacity: 1, transition: { delay: 200, duration: 800 } }"
+  class="text-sm text-white mb-3"
+>
+  Continuous | Personalized | Growth-Oriented
+</div>
+    
+<div class="grid grid-cols-2 gap-x-6 gap-y-4 mt-3">
+  <div v-click>
+    <div class="bg-blue-500 bg-opacity-10 p-3 rounded-lg border border-blue-500 transform transition-all duration-500 hover:scale-105 h-full">
+      <div class="flex items-center mb-1">
+        <div class="text-blue-500 text-lg mr-2 bg-blue-500 bg-opacity-30 p-1 rounded-full">🚀</div>
+        <div class="font-medium text-base text-white">Onboarding Program</div>
+      </div>
+      <ul class="text-xs text-gray-300 mb-1.5 list-inside pl-0">
+        <li class="mb-0.5">30-60-90 day roadmap</li>
+        <li class="mb-0.5">Culture immersion</li>
+        <li class="mb-0.5">Cross-functional shadowing</li>
+        <li>Weekly check-ins</li>
       </ul>
+      <div>
+        <div class="inline-block bg-blue-500 bg-opacity-20 text-blue-300 text-xs px-1 py-0.5 rounded">Structured</div>
+        <div class="inline-block bg-blue-500 bg-opacity-20 text-blue-300 text-xs px-1 py-0.5 rounded ml-1">Supportive</div>
+      </div>
     </div>
   </div>
   
-  <div>
-    <div v-click>
-      <div class="text-lg font-semibold text-orange-500">Continuous Learning Culture</div>
-      <ul class="text-sm list-disc ml-4 mt-1">
-        <li>Monthly "Innovation Days" for self-directed learning</li>
-        <li>Cross-functional project opportunities</li>
-        <li>Speaker series featuring industry experts</li>
-        <li>Book club with leadership discussions</li>
+  <div v-click>
+    <div class="bg-orange-500 bg-opacity-10 p-3 rounded-lg border border-orange-500 transform transition-all duration-500 hover:scale-105 h-full">
+      <div class="flex items-center mb-1">
+        <div class="text-orange-500 text-lg mr-2 bg-orange-500 bg-opacity-30 p-1 rounded-full">🧠</div>
+        <div class="font-medium text-base text-white">Continuous Learning</div>
+      </div>
+      <ul class="text-xs text-gray-300 mb-1.5 list-inside pl-0">
+        <li class="mb-0.5">Monthly "Innovation Days"</li>
+        <li class="mb-0.5">Cross-functional projects</li>
+        <li class="mb-0.5">Expert speaker series</li>
+        <li>Leadership book club</li>
       </ul>
+      <div>
+        <div class="inline-block bg-orange-500 bg-opacity-20 text-orange-300 text-xs px-1 py-0.5 rounded">Innovative</div>
+        <div class="inline-block bg-orange-500 bg-opacity-20 text-orange-300 text-xs px-1 py-0.5 rounded ml-1">Collaborative</div>
+      </div>
+    </div>
+  </div>
+    
+  <div v-click>
+    <div class="bg-green-500 bg-opacity-10 p-3 rounded-lg border border-green-500 transform transition-all duration-500 hover:scale-105 h-full">
+      <div class="flex items-center mb-1">
+        <div class="text-green-500 text-lg mr-2 bg-green-500 bg-opacity-30 p-1 rounded-full">👤</div>
+        <div class="font-medium text-base text-white">Mentorship Program</div>
+      </div>
+      <ul class="text-xs text-gray-300 mb-1.5 list-inside pl-0">
+        <li class="mb-0.5">Expert knowledge transfer</li>
+        <li class="mb-0.5">Career guidance</li>
+        <li class="mb-0.5">Regular success review</li>
+        <li>Skill development focus</li>
+      </ul>
+      <div>
+        <div class="inline-block bg-green-500 bg-opacity-20 text-green-300 text-xs px-1 py-0.5 rounded">Personalized</div>
+        <div class="inline-block bg-green-500 bg-opacity-20 text-green-300 text-xs px-1 py-0.5 rounded ml-1">Growth-focused</div>
+      </div>
+    </div>
+  </div>
+  
+  <div v-click>
+    <div class="bg-purple-500 bg-opacity-10 p-3 rounded-lg border border-purple-500 transform transition-all duration-500 hover:scale-105 h-full">
+      <div class="flex items-center mb-1">
+        <div class="text-purple-500 text-lg mr-2 bg-purple-500 bg-opacity-30 p-1 rounded-full">🎓</div>
+        <div class="font-medium text-base text-white">Learning Technology</div>
+      </div>
+      <ul class="text-xs text-gray-300 mb-1.5 list-inside pl-0">
+        <li class="mb-0.5">Custom LMS platform</li>
+        <li class="mb-0.5">Microlearning modules</li>
+        <li class="mb-0.5">VR simulation training</li>
+        <li>Skill assessment tools</li>
+      </ul>
+      <div>
+        <div class="inline-block bg-purple-500 bg-opacity-20 text-purple-300 text-xs px-1 py-0.5 rounded">Interactive</div>
+        <div class="inline-block bg-purple-500 bg-opacity-20 text-purple-300 text-xs px-1 py-0.5 rounded ml-1">On-demand</div>
+      </div>
     </div>
   </div>
 </div>
 
 <!--
 Our training and development strategy focuses on building both technical competencies and leadership capabilities while fostering a culture of continuous learning throughout the organization.
--->
-
----
-transition: slide-up
-layout: center
----
-
-# Training Methods & Tools
-
-<div class="grid grid-cols-3 gap-8 mt-8">
-  <div v-click class="bg-blue-500 bg-opacity-10 p-6 rounded-lg border border-blue-500 transform transition-all duration-500 hover:scale-105">
-    <div class="text-blue-500 text-3xl mb-2">🎓</div>
-    <div class="font-semibold mb-1">E-Learning Platform</div>
-    <div class="text-xs mb-2">Custom LMS with personalized learning paths</div>
-    <div class="text-xs text-gray-500">For: Core skills, compliance training</div>
-  </div>
-  
-  <div v-click class="bg-purple-500 bg-opacity-10 p-6 rounded-lg border border-purple-500 transform transition-all duration-500 hover:scale-105">
-    <div class="text-purple-500 text-3xl mb-2">👥</div>
-    <div class="font-semibold mb-1">Experiential Workshops</div>
-    <div class="text-xs mb-2">Interactive problem-solving sessions</div>
-    <div class="text-xs text-gray-500">For: Soft skills, teamwork, leadership</div>
-  </div>
-  
-  <div v-click class="bg-green-500 bg-opacity-10 p-6 rounded-lg border border-green-500 transform transition-all duration-500 hover:scale-105">
-    <div class="text-green-500 text-3xl mb-2">👤</div>
-    <div class="font-semibold mb-1">Mentorship Program</div>
-    <div class="text-xs mb-2">Structured guidance from senior leaders</div>
-    <div class="text-xs text-gray-500">For: Career development, knowledge transfer</div>
-  </div>
-  
-  <div v-click class="bg-orange-500 bg-opacity-10 p-6 rounded-lg border border-orange-500 transform transition-all duration-500 hover:scale-105">
-    <div class="text-orange-500 text-3xl mb-2">📓</div>
-    <div class="font-semibold mb-1">Microlearning</div>
-    <div class="text-xs mb-2">Short, focused learning modules</div>
-    <div class="text-xs text-gray-500">For: Just-in-time training, reinforcement</div>
-  </div>
-  
-  <div v-click class="bg-red-500 bg-opacity-10 p-6 rounded-lg border border-red-500 transform transition-all duration-500 hover:scale-105">
-    <div class="text-red-500 text-3xl mb-2">🖥️</div>
-    <div class="font-semibold mb-1">VR Simulations</div>
-    <div class="text-xs mb-2">Immersive scenario-based training</div>
-    <div class="text-xs text-gray-500">For: Complex skills, customer interactions</div>
-  </div>
-  
-  <div v-click class="bg-blue-400 bg-opacity-10 p-6 rounded-lg border border-blue-400 transform transition-all duration-500 hover:scale-105">
-    <div class="text-blue-400 text-3xl mb-2">📊</div>
-    <div class="font-semibold mb-1">Peer Learning Communities</div>
-    <div class="text-xs mb-2">Collaborative knowledge sharing groups</div>
-    <div class="text-xs text-gray-500">For: Continuous learning, best practices</div>
-  </div>
-</div>
-
-<!--
-We employ a diverse mix of training methods and tools to accommodate different learning styles and maximize knowledge retention and application.
 -->
 
 ---
